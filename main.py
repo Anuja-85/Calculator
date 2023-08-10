@@ -17,6 +17,7 @@ def Menu():
 while True:
 
     Menu()
+
     choice = input("Enter your choice (A-T or X to exit): ")
 
     if choice == "A":
