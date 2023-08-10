@@ -1,6 +1,7 @@
-#import cmath for complex number operations
+# import cmath for complex number operations
 import cmath
 import numpy as np
+
 
 def add():
     num1 = int(input("Enter the number: "))
@@ -8,11 +9,13 @@ def add():
     result = num1 + num2
     print("Addition = ", result)
 
+
 def subtract():
     num1 = int(input("Enter the number: "))
     num2 = int(input("Enter the number: "))
     result = num1 - num2
     print("Subtraction = ", result)
+
 
 def multiply():
     num1 = int(input("Enter the number: "))
@@ -20,11 +23,13 @@ def multiply():
     result = num1 * num2
     print("Multiplication = ", result)
 
+
 def divide():
     num1 = int(input("Enter the number: "))
     num2 = int(input("Enter the number: "))
     result = num1 / num2
     print("Division = ", result)
+
 
 def add_complex():
     num1 = complex(input("Enter the complex number (in the form a+bj): "))
@@ -32,11 +37,13 @@ def add_complex():
     result = num1 + num2
     print("Addition of Complex number = ", result)
 
+
 def subtract_complex():
     num1 = complex(input("Enter the complex number (in the form a+bj): "))
     num2 = complex(input("Enter the complex number (in the form a+bj): "))
     result = num1 - num2
     print("Subtraction of Complex number = ", result)
+
 
 def multiply_complex():
     num1 = complex(input("Enter the complex number (in the form a+bj): "))
@@ -44,16 +51,21 @@ def multiply_complex():
     result = num1 * num2
     print("Multiplication of Complex number = ", result)
 
+
 def power():
     num = int(input("Enter the number: "))
     index = int(input("Enter the index: "))
     result = num ** index
     print("Power of given number = ", result)
 
+
 def power_iota():
     power = int(input("Enter the power: "))
-    result = cmath.exp(1j * power * np.pi / 2) ## The cmath.exp() method accepts a complex number 
-    print("Result: ", result)                                  # and returns the exponential value.
+    # The cmath.exp() method accepts a complex number
+    result = cmath.exp(1j * power * np.pi / 2)
+    # and returns the exponential value.
+    print("Result: ", result)
+
 
 def add_matrices():
     rows = int(input("Enter the number of rows: "))
@@ -81,6 +93,7 @@ def add_matrices():
     result = np.add(matrix1, matrix2)
     print("Addition of two matrices = ", result)
 
+
 def subtract_matrices():
     rows = int(input("Enter the number of rows: "))
     columns = int(input("Enter the number of columns: "))
@@ -107,7 +120,8 @@ def subtract_matrices():
     result = np.subtract(matrix1, matrix2)
     print("Subtraction of two matrices = ", result)
 
-def multiply_matrices(): ## Not Working
+
+def multiply_matrices():  # Not Working
     rows1 = int(input("Enter the number of rows of the first matrix: "))
     cols1 = int(input("Enter the number of columns of the first matrix: "))
     rows2 = int(input("Enter the number of rows of the second matrix: "))
@@ -139,6 +153,7 @@ def multiply_matrices(): ## Not Working
     result = np.matmul(matrix1, matrix2)
     print("Multiplication of two matrices = ", result)
 
+
 def determinant():
     size = int(input("Enter the size of the square matrix: "))
 
@@ -155,6 +170,7 @@ def determinant():
     result = np.linalg.det(matrix)
     print("Determinant = ", result)
 
+
 def solve_linear_eq_2_var():
     print("Enter the coefficients of the linear equation in the form 'a1x + b1y = c1'")
     a1 = int(input("Enter coefficient a1: "))
@@ -168,6 +184,7 @@ def solve_linear_eq_2_var():
 
     result = np.linalg.solve([[a1, b1], [a2, b2]], [c1, c2])
     print("Result: x =", result[0], ", y =", result[1])
+
 
 def solve_linear_eq_3_var():
     print("Enter the coefficients of the linear equation in the form 'a1x + b1y + c1z = d1'")
@@ -188,8 +205,10 @@ def solve_linear_eq_3_var():
     c3 = float(input("Enter coefficient c3: "))
     d3 = float(input("Enter coefficient d3: "))
 
-    result = np.linalg.solve([[a1, b1, c1], [a2, b2, c2], [a3, b3, c3]], [d1, d2, d3])
+    result = np.linalg.solve(
+        [[a1, b1, c1], [a2, b2, c2], [a3, b3, c3]], [d1, d2, d3])
     print("Result: x =", result[0], ", y =", result[1], ", z =", result[2])
+
 
 def quadratic_equation():
     a = float(input("Enter the coefficient a: "))
@@ -212,6 +231,7 @@ def quadratic_equation():
         root2 = complex(real_part, -imag_part)
         print("Result: Two complex roots:", root1, "and", root2)
 
+
 def tertiary_equation():
     a = float(input("Enter the coefficient a: "))
     b = float(input("Enter the coefficient b: "))
@@ -221,6 +241,7 @@ def tertiary_equation():
     roots = np.roots([a, b, c, d])
     print("Result: ", roots)
 
+
 def arithmetic_series():
     first_term = float(input("Enter the first term of the series: "))
     common_difference = float(input("Enter the common difference: "))
@@ -229,6 +250,7 @@ def arithmetic_series():
     result = first_term + (index - 1) * common_difference
     print("Result: ", result)
 
+
 def sum_arithmetic_series():
     first_term = float(input("Enter the first term of the series: "))
     last_term = float(input("Enter the last term of the series: "))
@@ -236,6 +258,7 @@ def sum_arithmetic_series():
 
     result = (num_terms / 2) * (first_term + last_term)
     print("Result: ", result)
+
 
 def factorial():
     n = int(input("Enter a non-negative integer: "))
@@ -247,79 +270,7 @@ def factorial():
     result = np.math.factorial(n)
     print("Result: ", result)
 
-# Main program
-while True:
-    print("---- Calculator Menu ----")
-    print("A. Add")
-    print("B. Subtract")
-    print("C. Multiply")
-    print("D. Divide")
-    print("E. Add 2 complex numbers")
-    print("F. Subtract 2 complex numbers")
-    print("G. Multiply 2 complex numbers")
-    print("H. Power of a number")
-    print("I. Power of iota")
-    print("J. Addition of 2 matrices")
-    print("K. Subtraction of 2 matrices")
-    print("L. Multiplication of 2 matrices")
-    print("M. Determinant of a matrix")
-    print("N. Solve linear equation in 2 variables")
-    print("O. Solve linear equation in 3 variables")
-    print("P. Find roots of quadratic equation")
-    print("Q. Find roots of tertiary equation")
-    print("R. Find nth element of arithmetic series")
-    print("S. Find sum of first n elements of arithmetic series")
-    print("T. Evaluate factorial of n")
-    print("X. Exit")
 
-    choice = input("Enter your choice (A-T or X to exit): ")
-
-    if choice == "A":
-        add()
-    elif choice == "B":
-        subtract()
-    elif choice == "C":
-        multiply()
-    elif choice == "D":
-        divide()
-    elif choice == "E":
-        add_complex()
-    elif choice == "F":
-        subtract_complex()
-    elif choice == "G":
-        multiply_complex()
-    elif choice == "H":
-        power()
-    elif choice == "I":
-        power_iota()
-    elif choice == "J":
-        add_matrices()
-    elif choice == "K":
-        subtract_matrices()
-    elif choice == "L":
-        multiply_matrices()
-    elif choice == "M":
-        determinant()
-    elif choice == "N":
-        solve_linear_eq_2_var()
-    elif choice == "O":
-        solve_linear_eq_3_var()
-    elif choice == "P":
-        quadratic_equation()
-    elif choice == "Q":
-        tertiary_equation()
-    elif choice == "R":
-        arithmetic_series()
-    elif choice == "S":
-        sum_arithmetic_series()
-    elif choice == "T":
-        factorial()
-    elif choice == "X":
-        print("Exiting the calculator...")
-        break
-    else:
-        print("Invalid choice! Please select a valid option from A-T or X to exit.")
-        
 def solve_linear_eq_2_var():
     print("Enter the coefficients of the linear equation in the form 'a1x + b1y = c1'")
     a1 = int(input("Enter coefficient a1: "))
@@ -333,7 +284,8 @@ def solve_linear_eq_2_var():
 
     result = np.linalg.solve([[a1, b1], [a2, b2]], [c1, c2])
     print("Result: x =", result[0], ", y =", result[1])
-    
+
+
 def determinant():
     size = int(input("Enter the size of the square matrix: "))
 
@@ -349,12 +301,16 @@ def determinant():
 
     result = np.linalg.det(matrix)
     print("Determinant =", result)
-    
-    
+
+
 def power_iota():
     power = int(input("Enter the power: "))
-    result = cmath.exp(power) ## The cmath.exp() method accepts a complex number 
-    print("Result: ", result)                                  # and returns the exponential value.
+    # The cmath.exp() method accepts a complex number
+    result = cmath.exp(power)
+    # and returns the exponential value.
+    print("Result: ", result)
+
+
 def quadratic_equation():
     a = float(input("Enter the coefficient a: "))
     b = float(input("Enter the coefficient b: "))
@@ -376,6 +332,7 @@ def quadratic_equation():
         root2 = complex(real_part, -imag_part)
         print("Result: Two complex roots:", root1, "and", root2)
 
+
 def tertiary_equation():
     a = float(input("Enter the coefficient a: "))
     b = float(input("Enter the coefficient b: "))
@@ -385,6 +342,7 @@ def tertiary_equation():
     roots = np.roots([a, b, c, d])
     print("Result: ", roots)
 
+
 def arithmetic_series():
     first_term = float(input("Enter the first term of the series: "))
     common_difference = float(input("Enter the common difference: "))
@@ -393,6 +351,7 @@ def arithmetic_series():
     result = first_term + (index - 1) * common_difference
     print("Result: ", result)
 
+
 def sum_arithmetic_series():
     first_term = float(input("Enter the first term of the series: "))
     last_term = float(input("Enter the last term of the series: "))
@@ -400,6 +359,7 @@ def sum_arithmetic_series():
 
     result = (num_terms / 2) * (first_term + last_term)
     print("Result: ", result)
+
 
 def factorial():
     n = int(input("Enter a non-negative integer: "))
@@ -410,4 +370,3 @@ def factorial():
 
     result = np.math.factorial(n)
     print("Result: ", result)
-   
